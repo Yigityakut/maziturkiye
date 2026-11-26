@@ -4,7 +4,7 @@
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
 a{color:var(--accent)}img{max-width:100%;height:auto}
 .wrap{max-width:760px;margin:0 auto;padding:0 20px}
-header.site{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+header.site{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:18px;padding-bottom:18px}
 header.site a.brand{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--ink)}
 header.site img{width:36px;height:36px;border-radius:9px}
 .brand b{font-family:Fraunces,Georgia,serif;font-size:22px;font-weight:800;letter-spacing:-.3px}
@@ -22,8 +22,9 @@ h2{font-size:28px;margin:1.6em 0 .4em}h3{font-size:20px;margin:1.4em 0 .3em}
 .code{font:900 44px/1 Fraunces,Georgia,serif;letter-spacing:8px;background:var(--surface);border:1px dashed var(--line);border-radius:16px;padding:18px 22px;display:inline-block}
 .muted{color:var(--muted)}.small{font-size:14px}
 .legal p,.legal li{max-width:44em}.legal table{border-collapse:collapse;width:100%;font-size:15px}.legal td,.legal th{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}
-footer.site{border-top:1px solid var(--line);margin-top:56px;padding:24px 0 40px;font-size:14px;color:var(--muted)}
+footer.site{border-top:1px solid var(--line);margin-top:56px;padding-top:24px;padding-bottom:40px;font-size:14px;color:var(--muted)}
 footer.site a{color:var(--muted);margin-right:14px}
 input[type=email],input[type=text]{min-height:52px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:0 20px;font-size:17px;min-width:0;flex:1}
 .hero-shot{border-radius:28px;border:1px solid var(--line);box-shadow:0 20px 50px rgba(60,40,20,.15)}
 .placeholder{background:#fff3c4;color:#5a4500;padding:0 4px;border-radius:4px}
+@media (max-width:420px){nav a{margin-left:12px;font-size:14px}.brand b{font-size:19px}header.site img{width:32px;height:32px}}

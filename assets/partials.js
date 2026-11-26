@@ -10,7 +10,7 @@ document.querySelectorAll("[data-footer]").forEach((el) => {
 window.MAZI = {
   supabaseUrl: "https://ybhiddgwunzyquzrbzaf.supabase.co",
   key: "sb_publishable_YfIE8Fo1LCbF7DFH8kIR2g_gu-PbdtO",
-  appStore: "https://apps.apple.com/tr/app/id0000000000",          // TODO: App Store kaydından sonra
+  appStore: "https://apps.apple.com/tr/app/id6833869544",
   playStore: "https://play.google.com/store/apps/details?id=com.maziturkiye.app",
   async rpc(fn, args) {
     const r = await fetch(`${this.supabaseUrl}/rest/v1/rpc/${fn}`, {
@@ -20,5 +20,11 @@ window.MAZI = {
     if (!r.ok) throw new Error(await r.text());
     return r.json();
   },
-  storeLink() { return /android/i.test(navigator.userAgent) ? this.playStore : this.appStore; },
+  /** Cihaza göre mağaza: Android → Play, iPhone/iPad (iPadOS masaüstü UA dahil) → App Store, diğerleri → null (iki düğme görünür). */
+  storeLink() {
+    const ua = navigator.userAgent;
+    if (/android/i.test(ua)) return this.playStore;
+    if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) return this.appStore;
+    return null;
+  },
 };
